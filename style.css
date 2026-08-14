@@ -1,0 +1,243 @@
+/* 1. Variáveis de Cores e Configurações Gerais */
+:root {
+    --cor-fundo: #F8FAFC;
+    --cor-texto-principal: #2B2D42;
+    --cor-texto-secundario: #64748B;
+    --cor-branco: #FFFFFF;
+}
+
+/* 2. Reset Profissional */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-principal);
+    font-family: 'Nunito', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+}
+
+/* =========================================================
+   3. FUNDO DECORATIVO INSTITUCIONAL (Quebra-cabeças)
+   ========================================================= */
+.fundo-institucional {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1; 
+    pointer-events: none; 
+    overflow: hidden;
+}
+
+.peca {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    opacity: 0.85; /* Cores super vivas no fundo */
+}
+
+.p-azul { fill: #3498db; top: -20px; left: -20px; transform: rotate(15deg); }
+.p-vermelha { fill: #e74c3c; bottom: 10%; right: -30px; transform: rotate(-25deg); }
+.p-verde { fill: #8dc63f; top: 15%; right: 5%; transform: rotate(45deg); width: 100px; }
+.p-amarela { fill: #f1c40f; bottom: -20px; left: 10%; transform: rotate(-15deg); width: 120px; }
+
+/* 4. Container Base */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 5. Cabeçalho Principal */
+.cabecalho-principal {
+    padding: 60px 0;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.cabecalho-principal h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+    background: linear-gradient(45deg, #FF416C, #FF4B2B, #FFD166, #06D6A0, #118AB2);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: brilhoColorido 6s ease infinite;
+}
+
+.cabecalho-principal p {
+    font-size: 1.1rem;
+    color: var(--cor-texto-secundario);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@keyframes brilhoColorido {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 6. Grid Layout Espaçado */
+.grid-cartoes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 50px; /* Aumentamos o espaço para as peças do quebra-cabeça respirarem */
+    padding-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+    .grid-cartoes {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+}
+
+/* 7. Design dos Cartões (Base do Quebra-Cabeça) */
+.cartao {
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    /* Removido o overflow e bordas para o efeito 3D do quebra-cabeça funcionar */
+    border: none;
+    box-shadow: none; 
+}
+
+/* Mantém os textos e botões ACIMA das peças do quebra cabeça */
+.cartao-conteudo, .cartao-acao {
+    position: relative;
+    z-index: 5;
+}
+
+.cartao-conteudo { padding: 30px; }
+
+.cartao-conteudo h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: var(--cor-texto-principal);
+}
+
+.cartao-conteudo p { color: var(--cor-texto-secundario); }
+
+.cartao-acao { padding: 0 30px 30px 30px; }
+
+.cartao:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+/* Molde Base das abas e buracos */
+.cartao::after, .cartao::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+/* 8. Botões Profissionais */
+.botao-profissional {
+    display: inline-block;
+    color: var(--cor-branco);
+    padding: 14px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.1rem;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease;
+}
+
+.botao-profissional:hover {
+    transform: scale(1.05);
+}
+
+/* =========================================================
+   9. FORMATO QUEBRA-CABEÇA (A Mágica da Opacidade 0.12 simulada)
+   ========================================================= */
+
+/* Cartão 1 (Laranja) - Abas saindo na Direita e Embaixo */
+.cartao:nth-of-type(1) { background-color: #F9EFE1; }
+.cartao:nth-of-type(1)::after { /* Aba Direita */
+    right: -25px; top: 50%; transform: translateY(-50%); background-color: #F9EFE1;
+}
+.cartao:nth-of-type(1)::before { /* Aba Baixo */
+    bottom: -25px; left: 50%; transform: translateX(-50%); background-color: #F9EFE1;
+}
+.cartao:nth-of-type(1) .botao-profissional { background-color: #FF9F1C !important; }
+
+
+/* Cartão 2 (Verde) - Buraco na Esquerda, Aba Embaixo */
+.cartao:nth-of-type(2) { background-color: #DBF6F1; }
+.cartao:nth-of-type(2)::after { /* Buraco Esquerda (falso recorte) */
+    left: -25px; top: 50%; transform: translateY(-50%); background-color: var(--cor-fundo);
+}
+.cartao:nth-of-type(2)::before { /* Aba Baixo */
+    bottom: -25px; left: 50%; transform: translateX(-50%); background-color: #DBF6F1;
+}
+.cartao:nth-of-type(2) .botao-profissional { background-color: #06D6A0 !important; }
+
+
+/* Cartão 3 (Roxo) - Aba na Direita, Buraco em Cima */
+.cartao:nth-of-type(3) { background-color: #EDE5F8; }
+.cartao:nth-of-type(3)::after { /* Aba Direita */
+    right: -25px; top: 50%; transform: translateY(-50%); background-color: #EDE5F8;
+}
+.cartao:nth-of-type(3)::before { /* Buraco Cima (falso recorte) */
+    top: -25px; left: 50%; transform: translateX(-50%); background-color: var(--cor-fundo);
+}
+.cartao:nth-of-type(3) .botao-profissional { background-color: #9D4EDD !important; }
+
+
+/* Cartão 4 (Rosa) - Buracos na Esquerda e em Cima */
+.cartao:nth-of-type(4) { background-color: #F9E4EB; }
+.cartao:nth-of-type(4)::after { /* Buraco Esquerda */
+    left: -25px; top: 50%; transform: translateY(-50%); background-color: var(--cor-fundo);
+}
+.cartao:nth-of-type(4)::before { /* Buraco Cima */
+    top: -25px; left: 50%; transform: translateX(-50%); background-color: var(--cor-fundo);
+}
+.cartao:nth-of-type(4) .botao-profissional { background-color: #FF416C !important; }
+
+/* =========================================================
+   10. RODAPÉ PROFISSIONAL (Assinatura Acadêmica)
+   ========================================================= */
+.rodape-profissional {
+    text-align: center;
+    padding: 30px 0;
+    color: var(--cor-texto-secundario);
+    font-size: 0.95rem;
+    border-top: 1px solid #E2E8F0;
+    margin-top: 40px;
+}
+
+/* Espaçamento elegante entre as linhas do rodapé */
+.rodape-profissional p {
+    margin-bottom: 6px;
+    line-height: 1.5;
+}
+
+/* Destaque sutil para o nome da faculdade */
+.rodape-profissional .faculdade {
+    color: var(--cor-texto-principal);
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+}
+
+/* Distanciamento do ano no final */
+.rodape-profissional .ano {
+    margin-top: 20px;
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
