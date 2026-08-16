@@ -1,6 +1,6 @@
 # Portal de Apoio e Recursos TEA
 
-Fala, pessoal! Este projeto foi desenvolvido por mim (**Paulo Augusto dos Reis**) junto com o meus colegas, como parte da nossa entrega para a disciplina de **Desenvolvimento Front-End para Web** na **Faculdade Módulo (Cruzeiro do Sul)**, sob a orientação do professor **Eduardo Giovannetti Motta**.
+Fala, pessoal! Este projeto foi desenvolvido por mim **Paulo Augusto dos Reis**) junto com o meus colegas, como parte da nossa entrega para a disciplina de **Desenvolvimento Front-End para Web** na **Faculdade Módulo Cruzeiro do Sul**, sob a orientação do professor **Eduardo Giovannetti Motta**.
 
 ## 💡 A ideia do projeto
 A gente quis criar algo que fosse além de um simples exercício de faculdade. O **Portal de Apoio e Recursos TEA** nasceu com uma pegada social e institucional, focando em trazer informações claras, diretas e acessíveis sobre direitos, serviços e recursos visuais para famílias e pessoas que convivem com o Autismo. 
