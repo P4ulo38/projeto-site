@@ -1,0 +1,262 @@
+/* Complementos compartilhados pelas páginas de recursos do portal. */
+
+.tema-verde .etiqueta,
+.tema-verde .chamada { color: #087b61; }
+.tema-verde .etiqueta { background: #d9f8ef; }
+.tema-verde .hero h1 {
+    font-size: clamp(3.1rem, 9vw, 5.8rem);
+    background-image: linear-gradient(45deg, #087b61, #06d6a0, #8dc63f, #118ab2);
+}
+.tema-verde .resumo strong { color: #087b61; }
+.tema-verde .botao { border-color: #06a982; }
+.tema-verde .botao.primario { background: #06a982; }
+.tema-verde .botao.secundario { color: #087b61; }
+
+.tema-roxo .etiqueta,
+.tema-roxo .chamada { color: #7135a5; }
+.tema-roxo .etiqueta { background: #efe2fa; }
+.tema-roxo .hero h1 {
+    font-size: clamp(3.1rem, 9vw, 5.8rem);
+    background-image: linear-gradient(45deg, #7135a5, #9d4edd, #118ab2, #06d6a0);
+}
+.tema-roxo .resumo strong { color: #7135a5; }
+.tema-roxo .botao { border-color: #9d4edd; }
+.tema-roxo .botao.primario { background: #8c43ca; }
+.tema-roxo .botao.secundario { color: #7135a5; }
+
+.tema-rosa .etiqueta,
+.tema-rosa .chamada { color: #c52d51; }
+.tema-rosa .etiqueta { background: #ffe1e9; }
+.tema-rosa .hero h1 {
+    font-size: clamp(3rem, 8.4vw, 5.4rem);
+    background-image: linear-gradient(45deg, #ff416c, #ff9f1c, #9d4edd, #118ab2);
+}
+.tema-rosa .resumo strong { color: #c52d51; }
+.tema-rosa .botao { border-color: #ff416c; }
+.tema-rosa .botao.primario { background: #ff416c; }
+.tema-rosa .botao.secundario { color: #c52d51; }
+
+.nota-destaque {
+    display: flex;
+    gap: 14px;
+    margin-top: 20px;
+    padding: 20px 22px;
+    border-left: 5px solid var(--azul);
+    border-radius: 10px 17px 17px 10px;
+    background: #e8f5fb;
+    color: #385364;
+}
+
+.nota-destaque > span {
+    font-size: 1.35rem;
+}
+
+.nota-destaque p {
+    margin: 0;
+    color: inherit;
+}
+
+.lista-simples {
+    display: grid;
+    gap: 12px;
+    margin-top: 20px;
+    list-style: none;
+}
+
+.lista-simples li {
+    position: relative;
+    padding-left: 30px;
+    color: var(--cor-texto-suave);
+}
+
+.lista-simples li::before {
+    content: "✓";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    width: 22px;
+    height: 22px;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--verde);
+    color: #173c34;
+    font-size: 0.78rem;
+    font-weight: 900;
+}
+
+.lista-simples strong {
+    color: var(--cor-texto);
+}
+
+.mini-cartao.amarelo { background: #fff3ce; }
+.mini-cartao.roxo { background: #ede5f8; }
+.mini-cartao.laranja { background: #f9efe1; }
+
+.grade-quatro {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.etapas-avaliacao {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-top: 22px;
+}
+
+.etapas-avaliacao article {
+    padding: 23px;
+    border-radius: 17px;
+    background: rgba(255, 255, 255, 0.72);
+}
+
+.etapas-avaliacao span {
+    font-size: 1.7rem;
+}
+
+.etapas-avaliacao h3 {
+    margin-top: 9px;
+    font-size: 1.1rem;
+    font-weight: 900;
+}
+
+.etapas-avaliacao p {
+    margin-top: 6px;
+}
+
+.telefone-destaque {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 14px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: white;
+    color: var(--cor-texto);
+    font-weight: 900;
+}
+
+.grid-downloads {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.cartao-download {
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+    padding: 28px;
+    border: 1px solid #e2e8f0;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 12px 26px rgba(43, 45, 66, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cartao-download:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 34px rgba(43, 45, 66, 0.13);
+}
+
+.selo-pdf {
+    display: inline-flex;
+    align-self: flex-start;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 11px;
+    border-radius: 999px;
+    background: #ffe1e9;
+    color: #b3284a;
+    font-size: 0.75rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.cartao-download > span:not(.selo-pdf) {
+    margin-top: 22px;
+    font-size: 2.4rem;
+}
+
+.cartao-download h3 {
+    margin-top: 12px;
+    font-size: 1.35rem;
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+.cartao-download p {
+    margin: 10px 0 22px;
+    color: var(--cor-texto-suave);
+}
+
+.cartao-download .botao-download {
+    display: block;
+    margin-top: auto;
+    padding: 13px 18px;
+    border-radius: 999px;
+    background: #ff416c;
+    color: white;
+    font-weight: 900;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.cartao-download .botao-download:hover {
+    transform: scale(1.03);
+}
+
+.instrucoes-uso {
+    counter-reset: instrucoes;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 17px;
+    margin-top: 24px;
+}
+
+.instrucoes-uso div {
+    position: relative;
+    padding: 56px 22px 22px;
+    border-radius: 17px;
+    background: rgba(255, 255, 255, 0.76);
+}
+
+.instrucoes-uso div::before {
+    counter-increment: instrucoes;
+    content: counter(instrucoes);
+    position: absolute;
+    top: 17px;
+    left: 22px;
+    display: grid;
+    width: 30px;
+    height: 30px;
+    place-items: center;
+    border-radius: 50%;
+    background: #ff416c;
+    color: white;
+    font-weight: 900;
+}
+
+.instrucoes-uso strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.instrucoes-uso p {
+    margin: 0;
+}
+
+@media (max-width: 760px) {
+    .grade-quatro,
+    .etapas-avaliacao,
+    .grid-downloads,
+    .instrucoes-uso {
+        grid-template-columns: 1fr;
+    }
+
+    .nota-destaque {
+        padding: 18px;
+    }
+}
